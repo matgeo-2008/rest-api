@@ -12,4 +12,6 @@ class BlogPostSerializer(serializers.ModelSerializer): # forms.ModelForm
             'content',
             'timestamp',
         ]
-    
+
+    # converts to JSON
+    # vlidations for data passed

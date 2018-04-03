@@ -1,10 +1,13 @@
 # generic
 
 from rest_framework import generics
-from postings.models import BlogPost
 
-class BlogPostRudView(generics.RetrieveDestroyAPIView):
+from postings.models import BlogPost
+from .serializers import BlogPostSerializer
+
+class BlogPostRudView(generics.RetrieveDestroyAPIView): # DetailView CreateView FormView
     lookup_field        = 'pk' # slug, id # url(r'?P<pk>\d+')
+    serializer_class    = BlogPostSerializer
     #queryset            = BlogPost.objects.all()
 
     def get_queryset(self):
